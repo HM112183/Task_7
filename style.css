@@ -1,0 +1,86 @@
+:root {
+  --bg-light: #f5f7fa;
+  --bg-dark: #1e1e2f;
+  --text-light: #333;
+  --text-dark: #eee;
+  --card-bg-light: #ffffff;
+  --card-bg-dark: #2c2c3f;
+  --btn-bg: #007bff;
+  --btn-hover: #0056b3;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  margin: 0;
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.header {
+  text-align: center;
+}
+
+.buttons {
+  margin: 15px 0;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  background-color: var(--btn-bg);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--btn-hover);
+}
+
+#user-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.user-card {
+  background-color: var(--card-bg-light);
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  width: 250px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
+}
+
+body.dark-mode .user-card {
+  background-color: var(--card-bg-dark);
+  border: 1px solid #444;
+  box-shadow: 0 2px 8px rgba(255,255,255,0.05);
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
